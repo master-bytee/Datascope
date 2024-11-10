@@ -3,7 +3,7 @@
 
 > **A simple, powerful web application to check how websites track user data, promoting data transparency and privacy awareness.**
 
-![Datascope logo or screenshot here (optional)](image-link)
+
 
 ---
 
