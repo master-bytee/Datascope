@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Transparency Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='xyz.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Datascope: Unveiling How Your Data Is Being Tracked`</h1>
+
+        <h2>Enter a URL to Check Data Tracking Practices:</h2>
+        <form>
+            <input type="text" name="url" placeholder="https://example.com" required>
+            <button type="submit">Check Data Tracking</button>
+        </form>
+
+        <div id="result"></div>
+        <div id="explanation"></div>
+    </div>
+
+    <script>
+        document.querySelector('form').onsubmit = async function(event) {
+            event.preventDefault();  // Prevents page reload on form submit
+            const formData = new FormData(event.target);
+
+            const response = await fetch('/analyze', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerHTML = `<strong>Tracked Data:</strong><pre>${JSON.stringify(result, null, 2)}</pre>`;
+            document.getElementById('explanation').innerHTML = generateExplanation(result);
+        };
+
+        function generateExplanation(result) {
+            let explanation = '';
+            if (result["Google Analytics"]) {
+                explanation += "<p><strong>Google Analytics</strong> tracks website traffic and user behavior.</p>";
+            }
+            if (result["Facebook Pixel"]) {
+                explanation += "<p><strong>Facebook Pixel</strong> helps optimize Facebook ad campaigns.</p>";
+            }
+            if (result["Other Trackers"]) {
+                explanation += "<p>Other trackers may collect data for ads targeting or user preferences.</p>";
+            }
+            return explanation;
+        }
+    </script>
+</body>
+</html>

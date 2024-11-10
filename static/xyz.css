@@ -1,0 +1,104 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f5f5f0; /* Light beige background */
+    color: #3c3c3c; /* Dark gray text for readability */
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff; /* White background for the main container */
+    padding: 40px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+h1 {
+    color: #6f4f38; /* Coffee brown */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.6em;
+    color: #6f4f38;
+    margin-bottom: 20px;
+    font-weight: lighter;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 15px;
+    font-size: 1em;
+    border: 2px solid #e1d9c6;
+    border-radius: 8px;
+    margin-right: 10px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #6f4f38; /* Coffee brown on focus */
+    outline: none;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #d2c5b1; /* Light beige */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #a69f8d; /* Dark beige on hover */
+    transform: scale(1.05);
+}
+
+#result, #explanation {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#result pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 1em;
+    color: #3c3c3c;
+}
+
+#explanation p {
+    font-size: 1em;
+    color: #6f4f38;
+    line-height: 1.6;
+}
+
+footer {
+    font-size: 0.9em;
+    margin-top: 30px;
+    color: #6f4f38;
+}
