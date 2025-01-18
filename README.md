@@ -1,7 +1,9 @@
 
 # 🎛️ **Datascope: Unveiling How AI Uses Your Data**
 
-> **A simple, powerful web application to check how websites track user data, promoting data transparency and privacy awareness.**
+> **A simple, powerful web application to check how websites track user data, promoting data transparency and privacy awareness. 
+
+accessible on the web app link given - http://52.202.101.68:8000/ **
 
 
 
